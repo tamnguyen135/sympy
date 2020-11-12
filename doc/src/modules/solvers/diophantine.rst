@@ -99,7 +99,7 @@ functions in Diophantine module, it needs to be in the form `eq = 0`.
 Note that stepping one more level below the highest API, we can solve the very
 same equation by calling :py:meth:`~sympy.solvers.diophantine.diophantine.diop_solve`.
 
->>> from sympy.solvers.diophantine.diophantine import diop_solve
+>>> from sympy.solvers.diophantine import diop_solve
 >>> diop_solve(2*x + 3*y - 5)
 (3*t_0 - 5, 5 - 2*t_0)
 
@@ -111,7 +111,7 @@ or a set of tuples depending on the type of the equation given.
 We can also solve this equation by calling :py:meth:`~sympy.solvers.diophantine.diophantine.diop_linear`,
 which is what :py:meth:`~sympy.solvers.diophantine.diophantine.diop_solve` calls internally.
 
->>> from sympy.solvers.diophantine.diophantine import diop_linear
+>>> from sympy.solvers.diophantine import diop_linear
 >>> diop_linear(2*x + 3*y - 5)
 (3*t_0 - 5, 5 - 2*t_0)
 
@@ -197,7 +197,7 @@ are. For example consider the following example where we set n equal to 9.
 Any binary quadratic of the form `ax^2 + bxy + cy^2 + dx + ey + f = 0` can be
 transformed to an equivalent form `X^2 - DY^2 = N`.
 
->>> from sympy.solvers.diophantine.diophantine import find_DN, diop_DN, transformation_to_DN
+>>> from sympy.solvers.diophantine import find_DN, diop_DN, transformation_to_DN
 >>> find_DN(x**2 - 3*x*y + y**2 - 7*x + 5*y - 3)
 (5, 920)
 
@@ -246,7 +246,7 @@ If you are only interested in a base solution rather than the parameterized
 general solution (to be more precise, one of the general solutions), you can
 use :py:meth:`~sympy.solvers.diophantine.diophantine.diop_ternary_quadratic`.
 
->>> from sympy.solvers.diophantine.diophantine import diop_ternary_quadratic
+>>> from sympy.solvers.diophantine import diop_ternary_quadratic
 >>> diop_ternary_quadratic(3*x**2 + 4*y**2 - 5*z**2 + 4*x*y - 7*y*z + 7*z*x)
 (-4, 5, 1)
 
@@ -258,7 +258,7 @@ equation. You can refer to the docs of
 this. The equation `w^2 = AX^2 + BY^2` can be solved more easily by using the
 Aforementioned :py:meth:`~sympy.solvers.diophantine.diophantine.descent`.
 
->>> from sympy.solvers.diophantine.diophantine import descent
+>>> from sympy.solvers.diophantine import descent
 >>> descent(3, 1) # solves the equation w**2 = 3*Y**2 + Z**2
 (1, 0, 1)
 
@@ -280,7 +280,7 @@ level API. For the general sum of squares, this is also true, but one advantage
 of calling :py:meth:`~sympy.solvers.diophantine.diophantine.diop_general_sum_of_squares` is that
 you can control how many solutions are returned.
 
->>> from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
+>>> from sympy.solvers.diophantine import diop_general_sum_of_squares
 >>> eq = a**2 + b**2 + c**2 + d**2 - 18
 >>> diophantine(eq)
 {(0, 0, 3, 3), (0, 1, 1, 4), (1, 2, 2, 3)}
@@ -292,7 +292,7 @@ providean iterator that returns solutions and one may control whether
 the solutions contain zeros or not (and the solutions not containing
 zeros are returned first):
 
->>> from sympy.solvers.diophantine.diophantine import sum_of_squares
+>>> from sympy.solvers.diophantine import sum_of_squares
 >>> sos = sum_of_squares(18, 4, zeros=True)
 >>> next(sos)
 (1, 2, 2, 3)
