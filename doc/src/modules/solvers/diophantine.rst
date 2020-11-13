@@ -33,7 +33,7 @@ the Diophantine module.
 Module structure
 ----------------
 
-This module contains :py:meth:`~sympy.solvers.diophantine` and
+This module contains :py:meth:`~sympy.solvers.diophantine.diophantine.diophantine` and
 helper functions that are needed to solve certain Diophantine equations. It's
 structured in the following manner.
 
